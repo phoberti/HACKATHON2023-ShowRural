@@ -1,21 +1,97 @@
-# HACKATHON2023
+# HACKATHON2023 – Sistema de Validação de Higienização
 
-Sobre: Este repositório contém o projeto desenvolvido pela equipe The Byte Busters em relação ao desafio proposto no evento Hackathon Show Rural 2023.
+Projeto desenvolvido durante o Hackathon Show Rural 2023 pela equipe The Byte Busters.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Este repositório é um fork criado para documentar minha participação no desenvolvimento da solução proposta.
 
-Desafio: Controle de higiene e prevenção de contaminação em granjas de aves.
 
-Um dos maiores problemas de contaminação e frangos é por salmonela. Essa bactéria pode ser transmitida por várias fontes, uma delas são as pessoas trazendo a bactéria pelas roupas, acessórios, cabelo ou pele.  Para minimizar essa situação, todos que entrarem nas granjas devem tomar banho e vestir uniforme, essa é uma prática comum e inclusive exigida por lei. 
 
-O grande desafio é: Como assegurar que o funcionário está tomando o banho na granja, respeitando o "direito à privacidade"?
+## 🚩 Desafio
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Criar um mecanismo de controle que assegure que colaboradores de granjas realizem corretamente o protocolo de banho obrigatório, respeitando o direito à privacidade.
 
-Solução desenvolvida: visando a privacidade dos colaboradores durante o banho no local foi proposto a utilização do reconhecimento fácil por câmeras ne entrada e saída do banheiro juntamente ao histograma do banho do colaborador gerado através de um captador de som no chuveiro. 
+O principal risco sanitário abordado foi a contaminação por salmonela.
 
-O reconhecimento facial é útil para identificar cada colaborador e seu tempo permanecido no local tendo em vista que não existe esse controle mínimo no contexto atual da empresa. O tempo calculado permite um controle mínimo sobre quem é cada colaborador e a comparação de seu tempo no local com o tempo médio de banho esperado. O histograma de seu banho proveria uma garantia maior de que o colaborador não gastou seu tempo no local e sim tomou banho uma vez que o gráfico gerado por uma pessoa tomando banho difere do padrão gerado pela água caindo sem ninguém presente, além disso poderíamos estipular o tempo em que o chuveiro permaneceu ligado comparando com o tempo registrado pelo reconhecimento facial. 
 
-A solução foi desenvolvida levando em conta manter a privacidade dos funcionários e a falta de uma rede interna de conexão com a internet visto que somente em um ponto específico do local possui conexão.  Outro ponto que também pode ser estudado para este desafio seria a implementação de um “fiscal do banho” no local assegurando que cada colaborador entrou na cabine para se higienizar, porém questões como privacidade e a garantia do cumprimento do trabalho deste fiscal estariam sujeitas a critérios de controle o que poderia aumentar a complexidade do problema. 
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## 💡 Solução Desenvolvida
+
+A solução combina:
+
+-  Reconhecimento facial via webcam
+-  Captura e análise de áudio do chuveiro
+-  Geração de histograma de amplitude sonora
+-  Validação de permanência no ambiente
+
+O sistema funciona da seguinte forma:
+
+1. O colaborador é identificado por reconhecimento facial na entrada.
+2. Caso um rosto autorizado seja detectado, o sistema inicia a captura de áudio.
+3. O áudio do banho é gravado por 10 segundos.
+4. Um histograma da amplitude sonora é gerado para análise.
+5. O padrão sonoro pode ser comparado com um padrão esperado de banho real.
+
+
+
+## 🧠 Estrutura do Projeto
+
+### 🔹 main.py
+Arquivo principal que integra:
+- Validação facial
+- Captura de áudio
+
+### 🔹 facial.py
+Responsável por:
+- Carregar imagens de referência
+- Extrair encodings faciais
+- Capturar imagem da webcam
+- Comparar distância facial (threshold 0.6)
+- Validar presença do colaborador
+
+Tecnologias utilizadas:
+- OpenCV
+- face_recognition
+
+### 🔹 audio.py
+Responsável por:
+- Captura de áudio com PyAudio
+- Armazenamento em WAV
+- Leitura com scipy
+- Geração de histograma com matplotlib
+
+Tecnologias utilizadas:
+- PyAudio
+- NumPy
+- SciPy
+- Matplotlib
+
+
+
+## 🛠 Tecnologias Utilizadas
+
+- Python
+- OpenCV
+- face_recognition
+- PyAudio
+- NumPy
+- SciPy
+- Matplotlib
+
+
+
+## 🎯 Objetivo Técnico
+
+Criar um mecanismo de validação que:
+
+- Identifique o colaborador sem invadir privacidade
+- Verifique se houve permanência no local
+- Analise o padrão sonoro do banho
+- Minimize risco de fraude (água ligada sem pessoa presente)
+
+
+
+## 👨‍💻 Minha Participação
+
+Projeto desenvolvido em equipe durante o hackathon. Contribuí no desenvolvimento da lógica de validação e integração entre reconhecimento facial e análise de áudio, além da estruturação da solução técnica proposta.
+
+Este fork compõe meu portfólio como registro de participação em projeto prático envolvendo visão computacional e processamento de sinais.
