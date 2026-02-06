@@ -67,7 +67,7 @@ Tecnologias utilizadas:
 
 
 
-## 🛠 Tecnologias Utilizadas
+##  Tecnologias Utilizadas
 
 - Python
 - OpenCV
