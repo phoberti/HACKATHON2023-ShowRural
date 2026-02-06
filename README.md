@@ -6,7 +6,7 @@ Este repositório é um fork criado para documentar minha participação no dese
 
 
 
-## 🚩 Desafio
+##  Desafio
 
 Criar um mecanismo de controle que assegure que colaboradores de granjas realizem corretamente o protocolo de banho obrigatório, respeitando o direito à privacidade.
 
@@ -14,7 +14,7 @@ O principal risco sanitário abordado foi a contaminação por salmonela.
 
 
 
-## 💡 Solução Desenvolvida
+##  Solução Desenvolvida
 
 A solução combina:
 
@@ -33,7 +33,7 @@ O sistema funciona da seguinte forma:
 
 
 
-## 🧠 Estrutura do Projeto
+##  Estrutura do Projeto
 
 ### 🔹 main.py
 Arquivo principal que integra:
@@ -79,7 +79,7 @@ Tecnologias utilizadas:
 
 
 
-## 🎯 Objetivo Técnico
+##  Objetivo Técnico
 
 Criar um mecanismo de validação que:
 
@@ -90,7 +90,7 @@ Criar um mecanismo de validação que:
 
 
 
-## 👨‍💻 Minha Participação
+##  Minha Participação
 
 Projeto desenvolvido em equipe durante o hackathon. Contribuí no desenvolvimento da lógica de validação e integração entre reconhecimento facial e análise de áudio, além da estruturação da solução técnica proposta.
 
